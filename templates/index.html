@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Diabetes Predictor</title>
+     <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}" >
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div >
+      <h1 class="logo"><a href="index.html">Vision<span>.</span></a></h1>
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="container" >
+      <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8">
+          <h1>Powerful Digital Diabetes Predictor<span>.</span></h1>
+          <h2>Predicting Diabetes in an efficient way</h2>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+  <main id="main">
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" >
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Here is our predictor</p>
+        </div>
+        <form method="post" enctype="multipart/form-data" action="predictdiabetes">
+        {%csrf_token %}
+            <div class="form-group row">
+            <label  for="colFormLabelSm" class="col-sm-4 col-lg-2 col-form-label col-form-label-sm"><h4>Pregnancies</h4></label>
+            <div class="col-sm-4">
+            <input type="number" value="" name="Pregnancies" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Enter total pregnancies">
+            </div>
+            </div>
+        <div class="form-group row">
+            <label  for="colFormLabelSm" class="col-sm-4 col-lg-2 col-form-label col-form-label-sm"><h4>Glucose</h4></label>
+            <div class="col-sm-4">
+            <input type="number"   value="" name="Glucose" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Enter Glucose Level">
+        </div>
+        </div>
+        <div class="form-group row">
+             <label  for="colFormLabelSm" class="col-sm-4 col-lg-2 col-form-label col-form-label-sm"><h4>BloodPressure</h4></label>
+            <div class="col-sm-4">
+            <input type="number"  value="" name="BloodPressure" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Enter BloodPressure">
+            </div></div>
+
+        <div class="form-group row">
+            <label  for="colFormLabelSm" class="col-sm-4 col-lg-2 col-form-label col-form-label-sm"><h4>SkinThickness</h4></label>
+            <div class="col-sm-4">
+            <input type="number"  value="" name="SkinThickness" class="form-control form-control-sm" id="colFormLabelSm" placeholder="SkinThickness">
+            </div></div>
+
+        <div class="form-group row">
+           <label  for="colFormLabelSm" class="col-sm-4 col-lg-2 col-form-label col-form-label-sm"><h4>Insulin</h4></label>
+            <div class="col-sm-4">
+            <input type="number"   value="" name="Insulin" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Enter Insulin">
+            </div></div>
+        <div class="form-group row">
+            <label  for="colFormLabelSm" class="col-sm-4 col-lg-2 col-form-label col-form-label-sm"><h4>BMI</h4></label>
+            <div class="col-sm-4">
+            <input type="number"   value="" step="0.01"name="BMI" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Enter BMI">
+            </div></div>
+
+        <div class="form-group row">
+            <label  for="colFormLabelSm" class="col-sm-4 col-lg-2 col-form-label col-form-label-sm"><h4>DPFunction</h4></label>
+            <div class="col-sm-4">
+            <input type="number"   step="0.001" name="DiabetesPedigreeFunction" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Enter diabetes pedigree function">
+            </div></div>
+        <div class="form-group row">
+            <label  for="colFormLabelSm" class="col-sm-4 col-lg-2 col-form-label col-form-label-sm"><h4>Age</h4></label>
+            <div class="col-sm-4">
+            <input type="number"   value="" name="Age" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Enter your age">
+            </div></div>
+        
+    
+
+{%  if scoreval  %}
+           <h1>You are {{scoreval}}.</h1>
+ {% else%}
+ <input type="submit" value="Submit" >
+ {% endif %}
+          </form>
+      </div>
+    </section><!-- End Services Section -->
+          <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" >
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" >
+            <img src="{% static 'img/diabetes1.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" >
+              <center><h1 style="color: gold">About Us</h1></center>
+            <h3>HI EVERYONE</h3>
+            <p >
+              Team Vision is here to predict diabetes.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Analysed the data.</li>
+              <li><i class="ri-check-double-line"></i> Applied Machine learning alogorithms.</li>
+              <li><i class="ri-check-double-line"></i> Test it on multiple inputs.</li>
+            </ul>
+            <p>
+              This project give us an accuracy of 80%. So we are not very sure the person is diabetic or not.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Team</h2>
+          <p>Check our Team</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 ">
+            <div class="member" >
+              <div >
+                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""> 
+              </div>
+              <div class="member-info">
+                <h4>Shobhit Mishra</h4>
+                <span>Project Collaborator</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 ">
+            <div class="member" >
+              <div >
+                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                 </div>
+              <div class="member-info">
+                <h4>Shwetank Dixit</h4>
+                <span>Project Collaborator</span>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section><!-- End Team Section -->
+  </main><!-- End #main -->
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Vision<span>.</span></h3>
+              <div class="social-links mt-3">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-twitter"></a>
+              </div>
+            </div>
+          </div>
+          </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>VISION</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+                Designed by <a href="#">Vision</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+</body>
+</html>
