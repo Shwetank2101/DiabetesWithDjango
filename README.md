@@ -1,5 +1,5 @@
 # Diabetes Prediction
-[Website of our project]=>(https://checkyourdiabetes.herokuapp.com/)
+[Website of our project](https://checkyourdiabetes.herokuapp.com/)
 
 ![Image](https://github.com/Shobhitthebeginner/DiabetesWithDjango/blob/master/static/img/diabetes1.jpg)
 
