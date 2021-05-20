@@ -10,7 +10,7 @@ Skin Thickness,Insulin etc.
 All these parameters will be analysed through Machine Learning algorithms which will helps us to predict whether person is diabetic or not. 
 Output obtained would further be checked for correctness and model will be optimized accordingly. 
 We have to create a beautiful interface for interaction between the user and our ML model which is done through the Django framework.
-It can support the wine expert evaluations and ultimately improve the production.
+
 
 ## Dataset Description
 
